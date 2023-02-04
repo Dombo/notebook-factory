@@ -1,0 +1,12 @@
+#!/bin/sh
+
+if [ $# -ne 1 ]
+  then
+    echo "Usage: $(basename "$0") my-fancy-notebook"
+    exit 1
+fi
+
+mkdir -p "$1"
+cd notebook-template && cp -rv $(ls -A | grep -vE ".direnv") "../$1/"
+
+cd "../$1" && make install-githook

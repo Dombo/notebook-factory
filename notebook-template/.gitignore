@@ -1,0 +1,3 @@
+.direnv
+.env
+!./.git/hooks/pre-commit
